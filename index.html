@@ -127,11 +127,15 @@
       <button onclick="calculateMortgage()">Calculate Repayments</button>
     </div>
     <div class="results">
-      <h2>Your results</h2>
-      <p>Your monthly repayments</p>
-      <p class="highlight" id="monthly-repayment">-</p>
-      <p>Total you'll repay over the term</p>
-      <p class="highlight" id="total-repayment">-</p>
+      <img src="assets/images/illustration-empty.svg" alt="empty">
+      <h3>Results shown here</h3>
+      <div style="display:none">
+        <h2>Your results</h2>
+        <p>Your monthly repayments</p>
+        <p class="highlight" id="monthly-repayment">-</p>
+        <p>Total you'll repay over the term</p>
+        <p class="highlight" id="total-repayment">-</p>
+      </div>
     </div>
   </div>
 
@@ -159,6 +163,9 @@
       
       document.getElementById('monthly-repayment').innerText = `£${monthlyRepayment.toFixed(2)}`;
       document.getElementById('total-repayment').innerText = `£${totalRepayment.toFixed(2)}`;
+      document.querySelector(".results img").style.display = "none";
+      document.querySelector(".results h3").style.display = "none";
+      document.querySelector(".results div").style.display = "block";
     }
   </script>
 </body>
